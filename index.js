@@ -38,10 +38,8 @@ async function run(){
 
         // post Api
         app.post('/services', async (req, res) => {
-            const newUser = req.body;
-            const result = await serviceCollection.insertOne(newUser);
-            console.log('got new user', req.body);
-            console.log('added user', result);
+            const newService = req.body;
+            const result = await serviceCollection.insertOne(newService);
             res.json(result);
         });
 
