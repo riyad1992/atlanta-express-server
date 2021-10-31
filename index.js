@@ -97,12 +97,14 @@ async function run(){
         app.put("/update/:id", async (req, res) => {
             const id = req.params.id;
             const updatedName = req.body;
+            const updatedStatus = req.body;
             const filter = { _id: id };
 
             bookingCollection
             .updateOne(filter, {
                 $set: {
                 name: updatedName.name,
+                status: updatedStatus.status,
                 },
             })
             .then((result) => {
