@@ -93,7 +93,7 @@ async function run(){
         })
 
 
-        //update product
+        //update Booking
         app.put("/update/:id", async (req, res) => {
             const id = req.params.id;
             const updatedName = req.body;
